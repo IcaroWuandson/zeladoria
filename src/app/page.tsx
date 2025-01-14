@@ -1,7 +1,4 @@
-// Adicionando "use client" no topo do arquivo para garantir que o código
-// seja executado apenas no cliente.
-
-"use client"; // Adicionado para garantir que este componente seja executado no cliente
+"use client"; // Para garantir que este componente será executado no cliente
 
 import { supabase } from "@/utils/supabase/server";
 import React, { useEffect, useState } from "react";
@@ -16,25 +13,28 @@ export default function Page() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const fetchSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (!error) {
-        setSession(data.session);
-      }
-      setLoading(false);
-    };
+    // Verificar se o código está sendo executado no cliente
+    if (typeof window !== "undefined") {
+      const fetchSession = async () => {
+        const { data, error } = await supabase.auth.getSession();
+        if (!error) {
+          setSession(data.session);
+        }
+        setLoading(false);
+      };
 
-    const simulateProgress = setInterval(() => {
-      setProgress((prev) => {
-        if (prev < 100) return prev + 10;
-        clearInterval(simulateProgress);
-        return 100;
-      });
-    }, 100);
+      const simulateProgress = setInterval(() => {
+        setProgress((prev) => {
+          if (prev < 100) return prev + 10;
+          clearInterval(simulateProgress);
+          return 100;
+        });
+      }, 100);
 
-    fetchSession();
+      fetchSession();
 
-    return () => clearInterval(simulateProgress);
+      return () => clearInterval(simulateProgress);
+    }
   }, []);
 
   if (loading) {
