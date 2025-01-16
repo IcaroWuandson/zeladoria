@@ -14,6 +14,8 @@ import {
   ChartCandlestick,
   CircleUser,
   LogOut,
+  MessageSquare,
+  Kanban,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -50,7 +52,7 @@ export function AppSidebar() {
               <TooltipTrigger asChild>
                 <Link
                   href="/plataforma/home"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
                 >
                   <Home className="h-5 w-5" />
                 </Link>
@@ -65,7 +67,7 @@ export function AppSidebar() {
               <TooltipTrigger asChild>
                 <Link
                   href="/plataforma/dashboard"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
                 >
                   <ChartCandlestick className="h-5 w-5" />
                 </Link>
@@ -77,8 +79,34 @@ export function AppSidebar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
+                  href="/plataforma/chats"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
+                >
+                  <MessageSquare className="h-5 w-5" />
+                </Link>
+              </TooltipTrigger>
+
+              <TooltipContent side="right">Chats</TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
                   href="/plataforma/perfil"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
+                >
+                  <Kanban className="h-5 w-5" />
+                </Link>
+              </TooltipTrigger>
+
+              <TooltipContent side="right">Quadros</TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="/plataforma/perfil"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
                 >
                   <CircleUser className="h-5 w-5" />
                 </Link>

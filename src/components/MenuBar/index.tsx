@@ -1,6 +1,5 @@
 import {
   Menubar,
-  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
@@ -53,9 +52,6 @@ export function MenubarComponent() {
       <MenubarMenu>
         <MenubarTrigger>Configurações</MenubarTrigger>
         <MenubarContent>
-          <MenubarCheckboxItem>Notificar por Email</MenubarCheckboxItem>
-          <MenubarCheckboxItem checked>Exibir Chamados Finalizados</MenubarCheckboxItem>
-          <MenubarSeparator />
           <MenubarItem>Gerenciar Usuários</MenubarItem>
           <MenubarItem>Configurações do Sistema</MenubarItem>
         </MenubarContent>
@@ -68,8 +64,6 @@ export function MenubarComponent() {
             <MenubarRadioItem value="admin">Administrador</MenubarRadioItem>
             <MenubarRadioItem value="user">Usuário</MenubarRadioItem>
           </MenubarRadioGroup>
-          <MenubarSeparator />
-          <MenubarItem>Sair</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

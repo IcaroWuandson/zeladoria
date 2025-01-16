@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export default function Participantes() {
+export default function Perfil() {
   const notifications = [
     { title: "Denuncia registrada: Rua Suja", description: "1 hora atrás" },
     {

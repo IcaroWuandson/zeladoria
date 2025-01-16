@@ -32,22 +32,25 @@ export default function Home() {
 
   return (
     <Container>
-      <div className="mb-4">
+      <div className="mb-4 w-full">
         <p className="font-bold text-2xl">Seja Bem-Vindo(a)!</p>
       </div>
       <Separator className="my-4" />
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between w-full">
         <MenubarComponent />
 
         <DatePickerComponent />
       </div>
       <Separator className="my-4" />
 
-      <div className="flex flex-row justify-between">
-        <CardComponent content={cardContent} />
-        <CardComponent content={cardContent2} />
-        <CardComponent content={cardContent3} />
-        <CardComponent content={cardContent4} />
+
+      <div className="max-w-full">
+        <div className="flex flex-row justify-start gap-4">
+          <CardComponent content={cardContent} />
+          <CardComponent content={cardContent2} />
+          <CardComponent content={cardContent3} />
+          <CardComponent content={cardContent4} />
+        </div>
       </div>
 
       <Separator className="my-4" />

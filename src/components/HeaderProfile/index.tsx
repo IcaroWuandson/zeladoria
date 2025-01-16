@@ -11,7 +11,7 @@ export function HeaderProfileComponent() {
 
 
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarImage src="https://github.com/IcaroWuandson.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </div>
