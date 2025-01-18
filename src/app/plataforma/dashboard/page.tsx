@@ -6,14 +6,13 @@ import { ComponentChamadosPorBairro } from "@/components/DashboardsCharts/Chamad
 import { ComponentMedioResolução } from "@/components/DashboardsCharts/MedioResolução";
 import { ComponentOrigemDosChamados } from "@/components/DashboardsCharts/OrigemDosChamados";
 import { HeaderDashboardComponent } from "@/components/HeaderDashboard";
+import { HeaderWelcome } from "@/components/HeaderWelcome";
 import { Separator } from "@/components/ui/separator";
 
 export default function Dashboard() {
   return (
     <Container>
-      <div className="mb-4">
-        <p className="font-bold text-2xl">Seja Bem-Vindo(a)!</p>
-      </div>
+      <HeaderWelcome />
       <Separator className="my-4" />
       <HeaderDashboardComponent />
 

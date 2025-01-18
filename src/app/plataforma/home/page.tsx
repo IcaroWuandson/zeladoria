@@ -4,6 +4,7 @@ import { CardComponent } from "@/components/Card";
 import { ComponentChart } from "@/components/Chart";
 import Container from "@/components/Container";
 import { DatePickerComponent } from "@/components/DatePicker";
+import { HeaderWelcome } from "@/components/HeaderWelcome";
 import { MenubarComponent } from "@/components/MenuBar";
 import { TabelaChamados } from "@/components/Table";
 import { Separator } from "@/components/ui/separator";
@@ -32,9 +33,7 @@ export default function Home() {
 
   return (
     <Container>
-      <div className="mb-4 w-full">
-        <p className="font-bold text-2xl">Seja Bem-Vindo(a)!</p>
-      </div>
+      <HeaderWelcome />
       <Separator className="my-4" />
       <div className="flex flex-row justify-between w-full">
         <MenubarComponent />
@@ -42,7 +41,6 @@ export default function Home() {
         <DatePickerComponent />
       </div>
       <Separator className="my-4" />
-
 
       <div className="max-w-full">
         <div className="flex flex-row justify-start gap-4">

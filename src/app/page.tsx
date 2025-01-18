@@ -1,47 +1,20 @@
-"use client"; // Para garantir que este componente será executado no cliente
+// app/page.tsx
 
-import { supabase } from "@/utils/supabase/server";
-import React, { useEffect, useState } from "react";
+"use client"; // Para garantir que este código seja executado no cliente
+
+import { useAuth } from "@/context/AuthContext"; // Importa o hook useAuth
+import Loading from "@/components/Loading";
 import Login from "./plataforma/login";
 import Home from "./plataforma/home/page";
-import { Session } from "@supabase/supabase-js";
-import Loading from "@/components/Loading";
 
 export default function Page() {
-  const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    // Verificar se o código está sendo executado no cliente
-    if (typeof window !== "undefined") {
-      const fetchSession = async () => {
-        const { data, error } = await supabase.auth.getSession();
-        if (!error) {
-          setSession(data.session);
-        }
-        setLoading(false);
-      };
-
-      const simulateProgress = setInterval(() => {
-        setProgress((prev) => {
-          if (prev < 100) return prev + 10;
-          clearInterval(simulateProgress);
-          return 100;
-        });
-      }, 100);
-
-      fetchSession();
-
-      return () => clearInterval(simulateProgress);
-    }
-  }, []);
+  const { user, loading } = useAuth(); // Usa o hook useAuth
 
   if (loading) {
-    return <Loading isLoading={loading} value={progress} />;
+    return <Loading isLoading={loading} value={50} />;
   }
 
-  if (session?.user) {
+  if (user) {
     return <Home />;
   }
 

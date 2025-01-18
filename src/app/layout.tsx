@@ -1,21 +1,23 @@
-import type { Metadata } from "next";
+import { AuthProvider } from "@/context/AuthContext";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "SIGEDAM",
-  description:
-    "Sistema de analise de orçamento para prefeituras",
+  description: "Sistema de análise de orçamento para prefeituras",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-br">
       <body
@@ -24,7 +26,19 @@ export default function RootLayout({
           inter.className
         )}
       >
-        {children}
+        <AuthProvider>
+          <main suppressHydrationWarning>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </main>
+        </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

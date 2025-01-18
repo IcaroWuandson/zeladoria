@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "@/components/Container";
 
 import { HeaderProfileComponent } from "@/components/HeaderProfile";
@@ -12,8 +14,46 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useAuth } from "@/context/AuthContext";
+import { useEffect, useState } from "react";
+import { supabase } from "@/utils/supabase/server";
+import { HeaderWelcome } from "@/components/HeaderWelcome";
+
+interface ProfileUser {
+  id: string;
+  username: string;
+  full_name?: string;
+  avatar_url?: string;
+  website?: string;
+  city?: string;
+  phone?: string;
+}
 
 export default function Perfil() {
+  const { user } = useAuth();
+
+  const [profile, setProfile] = useState<ProfileUser | undefined>(undefined);
+
+  useEffect(() => {
+    if (user) {
+      const fetchProfile = async () => {
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", user.id)
+          .single();
+
+        if (data) {
+          setProfile(data);
+        } else {
+          console.error("Erro ao buscar o perfil:", error);
+        }
+      };
+
+      fetchProfile();
+    }
+  }, [user]);
+
   const notifications = [
     { title: "Denuncia registrada: Rua Suja", description: "1 hora atrás" },
     {
@@ -173,9 +213,7 @@ export default function Perfil() {
 
   return (
     <Container>
-      <div className="mb-4">
-        <p className="font-bold text-2xl">Seja Bem-Vindo(a)!</p>
-      </div>
+      <HeaderWelcome />
       <Separator className="my-4" />
       <HeaderProfileComponent />
       <Separator className="my-4" />
@@ -183,7 +221,7 @@ export default function Perfil() {
       <div className="flex flex-row items-start justify-start gap-4">
         <Card className="w-[500px]">
           <CardHeader className="items-center">
-            <CardTitle>Ícaro Wuandson</CardTitle>
+            <CardTitle>{profile?.username || "Carregando..."}</CardTitle>
 
             <div className="flex h-16 items-center space-x-4 text-sm mt-4">
               <div className="items-center flex flex-col">
@@ -210,11 +248,11 @@ export default function Perfil() {
             </div>
             <div className="flex flex-row gap-2 items-center">
               <Phone className="h-5 w-5" />
-              (86)99816-9840
+              {profile?.phone || "..."}
             </div>
             <div className="flex flex-row gap-2 items-center">
               <MapPin className="h-5 w-5" />
-              Teresina - Piauí
+              {profile?.city || "..."}
             </div>
           </CardContent>
         </Card>

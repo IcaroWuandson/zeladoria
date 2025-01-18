@@ -64,7 +64,7 @@ export function TabelaChamados() {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={4} className="text-right bg-white">
+          <TableCell colSpan={4} className="text-right bg-white dark:bg-neutral-950">
             Total de Chamados: {chamados.length}
           </TableCell>
         </TableRow>
