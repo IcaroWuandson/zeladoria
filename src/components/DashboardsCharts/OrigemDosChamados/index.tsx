@@ -51,7 +51,7 @@ const configuracaoGrafico = {
 
 export function ComponentOrigemDosChamados() {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col max-w-[500px]">
       <CardHeader className=" pb-0">
         <CardTitle>Canais de Registro</CardTitle>
         <CardDescription>

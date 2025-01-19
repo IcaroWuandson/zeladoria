@@ -42,7 +42,7 @@ export function ComponentChamadasAoLongoDoTempo() {
         <CardTitle>Evolução dos Chamados Registrados</CardTitle>
         <CardDescription>Janeiro - Junho 2024</CardDescription>
       </CardHeader>
-      <CardContent className="w-[500px]">
+      <CardContent className="max-w-[500px]">
         <ChartContainer config={chartConfig}>
           <LineChart
             accessibilityLayer

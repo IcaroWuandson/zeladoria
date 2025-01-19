@@ -10,6 +10,8 @@ import { TabelaChamados } from "@/components/Table";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
+
+  
   const cardContent = {
     title: "Chamados",
     description: "Número de chamados realizados",

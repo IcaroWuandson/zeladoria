@@ -41,7 +41,7 @@ export function ComponentChamadosPorBairro() {
         <CardTitle>Chamados por Bairro</CardTitle>
         <CardDescription>Visualização por região da cidade</CardDescription>
       </CardHeader>
-      <CardContent className="w-[500px]">
+      <CardContent className="max-w-[500px]">
         <ChartContainer config={chartConfig}>
           <BarChart data={chartData} barSize={40}>
             <CartesianGrid strokeDasharray="3 3" />

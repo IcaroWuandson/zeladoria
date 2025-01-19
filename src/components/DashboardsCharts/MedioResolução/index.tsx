@@ -45,7 +45,7 @@ export function ComponentMedioResolução() {
           Exibe o tempo médio de resolução dos chamados nos últimos 6 meses.
         </CardDescription>
       </CardHeader>
-      <CardContent className="w-[500px]">
+      <CardContent className="max-w-[500px]">
         <ChartContainer config={configuracaoGrafico}>
           <LineChart
             accessibilityLayer

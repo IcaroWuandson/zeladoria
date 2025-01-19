@@ -53,7 +53,7 @@ export function ComponentChamadasPorStatus() {
         <CardTitle>Chamados por Status</CardTitle>
         <CardDescription>Distribuição dos chamados por status</CardDescription>
       </CardHeader>
-      <CardContent className="w-[500px]">
+      <CardContent className="max-w-[500px]">
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer

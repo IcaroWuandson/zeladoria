@@ -35,7 +35,7 @@ export default function ControlerChat({ onSelectProfile }: ControlerChatProps) {
   const [lastMessages, setLastMessages] = useState<{
     [key: string]: { content: string; created_at: string };
   }>({});
-  const [isLoading, setIsLoading] = useState<boolean>(true); // Estado para controle de carregamento
+  const [isLoading, setIsLoading] = useState<boolean>(true); 
 
   useEffect(() => {
     const fetchProfiles = async () => {
