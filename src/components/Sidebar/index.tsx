@@ -16,6 +16,7 @@ import {
   LogOut,
   MessageSquare,
   Kanban,
+  MapPinned,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -86,7 +87,20 @@ export function AppSidebar() {
                 </Link>
               </TooltipTrigger>
 
-              <TooltipContent side="right">Chats</TooltipContent>
+              <TooltipContent side="right">Conversas</TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="/plataforma/mapa"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
+                >
+                  <MapPinned className="h-5 w-5" />
+                </Link>
+              </TooltipTrigger>
+
+              <TooltipContent side="right">Mapa</TooltipContent>
             </Tooltip>
 
             <Tooltip>

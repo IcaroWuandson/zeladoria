@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { RealTimeNotifications } from "@/components/Notifications";
+import "leaflet/dist/leaflet.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
