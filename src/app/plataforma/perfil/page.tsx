@@ -16,7 +16,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useEffect, useState } from "react";
 import { supabase } from "@/utils/supabase/server";
-import { HeaderWelcome } from "@/components/HeaderWelcome";
+
 import ComponentNotifications from "./notifications";
 
 interface ProfileUser {
@@ -55,10 +55,7 @@ export default function Perfil() {
 
   return (
     <Container>
-      <HeaderWelcome />
-      <Separator className="my-4" />
       <HeaderProfileComponent />
-      <Separator className="my-4" />
 
       <div className="flex flex-row items-start justify-start gap-4">
         <Card className="w-[500px]">

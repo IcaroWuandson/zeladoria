@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -36,7 +35,7 @@ export default function Login() {
     if (error) {
       alert("Erro no login. Verifique suas credenciais.");
     } else {
-      router.push("/plataforma/home");
+      router.push("/home");
     }
   };
 
@@ -63,10 +62,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex h-screen justify-between items-center px-44">
-      <div>
-        <h2>SIGEDAM</h2>
-      </div>
+    <div className="flex h-screen justify-center items-center px-44">
       <div>
         <Tabs defaultValue="login" className="w-[400px] mx-auto">
           <TabsList className="grid w-full grid-cols-2">
@@ -104,11 +100,10 @@ export default function Login() {
                       onChange={(e) => setLoginPassword(e.target.value)}
                     />
                   </div>
-                  <CardFooter>
-                    <Button className="w-80 my-4" type="submit">
-                      Entrar
-                    </Button>
-                  </CardFooter>
+
+                  <Button className="w-full my-4" type="submit">
+                    Entrar
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -154,11 +149,10 @@ export default function Login() {
                       onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                   </div>
-                  <CardFooter>
-                    <Button className="w-80 my-4" type="submit">
-                      Registrar
-                    </Button>
-                  </CardFooter>
+
+                  <Button className="w-full my-4" type="submit">
+                    Registrar
+                  </Button>
                 </form>
               </CardContent>
             </Card>

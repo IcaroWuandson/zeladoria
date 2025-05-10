@@ -4,14 +4,11 @@ import { CardComponent } from "@/components/Card";
 import { ComponentChart } from "@/components/Chart";
 import Container from "@/components/Container";
 import { DatePickerComponent } from "@/components/DatePicker";
-import { HeaderWelcome } from "@/components/HeaderWelcome";
+
 import { MenubarComponent } from "@/components/MenuBar";
 import { TabelaChamados } from "@/components/Table";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
-
-  
   const cardContent = {
     title: "Chamados",
     description: "Número de chamados realizados",
@@ -35,29 +32,22 @@ export default function Home() {
 
   return (
     <Container>
-      <HeaderWelcome />
-      <Separator className="my-4" />
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between w-full mb-2">
         <MenubarComponent />
 
         <DatePickerComponent />
       </div>
-      <Separator className="my-4" />
 
-      <div className="max-w-full">
-        <div className="flex flex-row justify-start gap-4">
-          <CardComponent content={cardContent} />
-          <CardComponent content={cardContent2} />
-          <CardComponent content={cardContent3} />
-          <CardComponent content={cardContent4} />
-        </div>
+      <div className="flex flex-row justify-start gap-4 mb-2">
+        <CardComponent content={cardContent} />
+        <CardComponent content={cardContent2} />
+        <CardComponent content={cardContent3} />
+        <CardComponent content={cardContent4} />
       </div>
 
-      <Separator className="my-4" />
       <div>
         <TabelaChamados />
 
-        <Separator className="my-4" />
         <ComponentChart />
       </div>
     </Container>

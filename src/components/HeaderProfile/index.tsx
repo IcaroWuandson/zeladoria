@@ -31,7 +31,7 @@ export function HeaderProfileComponent() {
   }, [user?.id]);
 
   return (
-    <div className="flex flex-row justify-between mr-6">
+    <div className="flex flex-row justify-between mb-2">
       <MenubarPerfil />
 
       <Avatar>

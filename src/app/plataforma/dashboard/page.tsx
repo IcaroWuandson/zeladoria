@@ -6,25 +6,21 @@ import { ComponentChamadosPorBairro } from "@/components/DashboardsCharts/Chamad
 import { ComponentMedioResolução } from "@/components/DashboardsCharts/MedioResolução";
 import { ComponentOrigemDosChamados } from "@/components/DashboardsCharts/OrigemDosChamados";
 import { HeaderDashboardComponent } from "@/components/HeaderDashboard";
-import { HeaderWelcome } from "@/components/HeaderWelcome";
+
 import { Separator } from "@/components/ui/separator";
 
 export default function Dashboard() {
   return (
     <Container>
-      <HeaderWelcome />
-      <Separator className="my-4" />
       <HeaderDashboardComponent />
 
-      <Separator className="my-4" />
-
-      <div className="flex flex-row justify-start gap-4">
+      <div className="flex flex-row justify-start gap-4 mt-2">
         <ComponentChamadaPorTipo />
         <ComponentChamadasPorStatus />
         <ComponentChamadosPorBairro />
       </div>
       <Separator className="my-4" />
-      <div className="flex flex-row justify-start gap-4">
+      <div className="flex flex-row justify-start gap-4 mb-12">
         <ComponentChamadasAoLongoDoTempo />
         <ComponentMedioResolução />
         <ComponentOrigemDosChamados />

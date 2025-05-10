@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Container from "@/components/Container";
-import { HeaderWelcome } from "@/components/HeaderWelcome";
+import Redirecting from "@/app/redirecting";
 
 const ComponentMap = dynamic(() => import("./componet-map"), {
-  loading: () => <p>A map is loading</p>,
+  loading: () => <Redirecting />,
   ssr: false,
 });
 
@@ -16,14 +16,9 @@ export default function Mapa() {
   useEffect(() => {
     setIsMapReady(true);
     return () => {
-      setIsMapReady(false); // Limpa a instância do mapa quando o componente for desmontado
+      setIsMapReady(false);
     };
   }, []);
 
-  return (
-    <Container>
-      <HeaderWelcome />
-      {isMapReady && <ComponentMap />}
-    </Container>
-  );
+  return <Container>{isMapReady && <ComponentMap />}</Container>;
 }

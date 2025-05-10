@@ -10,7 +10,6 @@ import {
 } from "@radix-ui/react-tooltip";
 import {
   Home,
-  Brain,
   ChartCandlestick,
   CircleUser,
   LogOut,
@@ -45,23 +44,17 @@ export function AppSidebar() {
       <aside className="fixed inset-y-0 left-0 z-10 w-14 border-r bg-background flex-col h-full">
         <nav className="flex flex-col items-center gap-4 px-2 py-5 flex-grow">
           <TooltipProvider>
-            <Link href="#">
-              <Brain className="h-5 w-5" />
-            </Link>
-
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="/plataforma/home"
+                  href="/home"
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
                 >
                   <Home className="h-5 w-5" />
                 </Link>
               </TooltipTrigger>
 
-              <TooltipContent side="right">
-                <p>Home</p>
-              </TooltipContent>
+              <TooltipContent side="right">Home</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -106,14 +99,14 @@ export function AppSidebar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="/plataforma/perfil"
+                  href="/plataforma/tarefas"
                   className="flex h-9 w-9 shrink-0 items-center justify-center text-muted-foreground transition-colors hover:text-foreground border-2 rounded-full"
                 >
                   <Kanban className="h-5 w-5" />
                 </Link>
               </TooltipTrigger>
 
-              <TooltipContent side="right">Quadros</TooltipContent>
+              <TooltipContent side="right">Tarefas</TooltipContent>
             </Tooltip>
 
             <Tooltip>

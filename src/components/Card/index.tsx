@@ -16,7 +16,7 @@ interface CardContentTypes {
 
 export function CardComponent({ content }: { content: CardContentTypes }) {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-full rounded-sm">
       <CardHeader>
         <CardTitle>{content.title}</CardTitle>
         <CardDescription>{content.description}</CardDescription>

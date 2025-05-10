@@ -12,8 +12,8 @@ import "leaflet/dist/leaflet.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SIGEDAM",
-  description: "Sistema de análise de orçamento para prefeituras",
+  title: "Zelosim",
+  description: "Sistema de análise de demandas para prefeituras",
 };
 
 interface RootLayoutProps {
@@ -22,7 +22,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
