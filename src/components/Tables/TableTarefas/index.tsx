@@ -276,12 +276,14 @@ export default function ListaDeTarefas() {
           <Button
             onClick={() => handleExcluirTarefa(row.index)}
             variant="outline"
+            className=" w-full h-8"
           >
             Excluir
           </Button>
           <Button
             onClick={() => handleIniciarTarefa(row.original)}
             variant="default"
+            className="bg-[#0134a3] w-full h-8"
           >
             Iniciar
           </Button>
@@ -297,9 +299,9 @@ export default function ListaDeTarefas() {
   });
 
   return (
-    <div className="rounded-md border p-4 h-[85vh]">
+    <div className="rounded-md p-4 h-[85vh]">
       <h2 className="mb-4 text-xl font-bold">Tarefas</h2>
-      <ScrollArea className="h-[75vh]">
+      <ScrollArea className="h-[75vh] border py-2 rounded-md">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

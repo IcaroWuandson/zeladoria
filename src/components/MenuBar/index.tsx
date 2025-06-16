@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Menubar,
   MenubarContent,
@@ -6,25 +8,24 @@ import {
   MenubarRadioGroup,
   MenubarRadioItem,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-export function MenubarComponent() {
+interface MenubarProps {
+  onNovoChamado: () => void;
+}
+
+export function MenubarComponent({ onNovoChamado }: MenubarProps) {
   return (
     <Menubar>
       <MenubarMenu>
         <MenubarTrigger>Chamados</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>
-            Novo Chamado <MenubarShortcut>Ctrl+N</MenubarShortcut>
-          </MenubarItem>
-          <MenubarItem>
-            Consultar Chamados <MenubarShortcut>Ctrl+F</MenubarShortcut>
-          </MenubarItem>
+          <MenubarItem onClick={onNovoChamado}>Novo Chamado</MenubarItem>
+          <MenubarItem>Consultar Chamados</MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
             <MenubarSubTrigger>Filtrar por Status</MenubarSubTrigger>

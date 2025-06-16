@@ -1,5 +1,5 @@
-"use-client";
-
+"use client";
+import React, { useState } from "react";
 import { CardComponent } from "@/components/Card";
 import { ComponentChart } from "@/components/Chart";
 import Container from "@/components/Container";
@@ -7,8 +7,11 @@ import { DatePickerComponent } from "@/components/DatePicker";
 
 import { MenubarComponent } from "@/components/MenuBar";
 import { TabelaChamados } from "@/components/Table";
+import { DialogNovoChamado } from "@/components/Dialogs/NovoChamado";
 
 export default function Home() {
+  const [openNovoChamado, setOpenNovoChamado] = useState(false);
+
   const cardContent = {
     title: "Chamados",
     description: "Número de chamados realizados",
@@ -33,8 +36,7 @@ export default function Home() {
   return (
     <Container>
       <div className="flex flex-row justify-between w-full mb-2">
-        <MenubarComponent />
-
+        <MenubarComponent onNovoChamado={() => setOpenNovoChamado(true)} />
         <DatePickerComponent />
       </div>
 
@@ -50,6 +52,11 @@ export default function Home() {
 
         <ComponentChart />
       </div>
+
+      <DialogNovoChamado
+        open={openNovoChamado}
+        onOpenChange={setOpenNovoChamado}
+      />
     </Container>
   );
 }

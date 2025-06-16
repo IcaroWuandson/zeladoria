@@ -203,7 +203,7 @@ export default function ControlerChat({ onSelectProfile }: ControlerChatProps) {
   };
 
   return (
-    <Card className="w-[25vw] h-[75vh] shadow-lg">
+    <Card className="w-[25vw] h-[85vh] shadow-lg">
       <CardHeader>
         <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
           Conversas

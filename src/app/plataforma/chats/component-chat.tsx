@@ -170,9 +170,9 @@ export default function Chat({ profile }: ChatProps) {
   }
 
   return (
-    <div className="flex flex-col w-[70vw] h-[75vh]">
+    <div className="flex flex-col w-[70vw] h-[85vh] ">
       <div className="flex flex-col gap-2">
-        <div className="flex flex-row p-2 gap-2 justify-start items-center">
+        <div className="flex flex-row p-2 gap-2 justify-start items-center  border-gray-400 bg-slate-200 rounded-md">
           <Avatar>
             <AvatarImage
               src={profile.avatar_url}
@@ -211,7 +211,7 @@ export default function Chat({ profile }: ChatProps) {
       </div>
 
       <div
-        className="flex-grow overflow-auto flex flex-col gap-4 p-4"
+        className="flex-grow overflow-auto flex flex-col gap-4 p-4 bg-slate-100"
         ref={messageContainerRef}
       >
         {messages.map((message) => (
@@ -219,10 +219,9 @@ export default function Chat({ profile }: ChatProps) {
             key={message.id}
             className={`${
               message.sender_id === user?.id
-                ? "self-end bg-indigo-100"
-                : "self-start bg-gray-100"
+                ? "self-end bg-indigo-200"
+                : "self-start bg-indigo-200"
             } p-3 rounded-lg max-w-[60%] shadow-sm`}
-             
           >
             <p className="text-gray-800 text-base1 text-justify">
               {message.content}
@@ -237,7 +236,7 @@ export default function Chat({ profile }: ChatProps) {
         ))}
       </div>
 
-      <div className="border border-gray-200 rounded-lg p-4 flex flex-row justify-between items-center gap-2">
+      <div className="border border-gray-400 bg-slate-200 rounded-lg p-4 flex flex-row justify-between items-center gap-2">
         <div className="relative w-full">
           <Input
             placeholder="Mensagem"
@@ -249,7 +248,7 @@ export default function Chat({ profile }: ChatProps) {
                 handleSendMessage();
               }
             }}
-            className="pr-20 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
+            className="pr-20 border border-gray-300 bg-slate-100 rounded-md focus:none focus:none"
           />
 
           <div className="absolute top-1/2 right-3 transform -translate-y-1/2 flex items-center space-x-2 text-gray-500">
@@ -259,7 +258,7 @@ export default function Chat({ profile }: ChatProps) {
             />
           </div>
         </div>
-        <Button onClick={handleSendMessage}>
+        <Button onClick={handleSendMessage} className="bg-[#0134a3]">
           <Send />{" "}
         </Button>
       </div>
